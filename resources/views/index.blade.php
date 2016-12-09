@@ -1,9 +1,5 @@
 @extends('voyager::master')
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/ga-embed.css">
-@stop
-
 @section('content')
     <div class="page-content">
         <div class="widgets">
@@ -45,7 +41,7 @@
             <?php } ?>
         </div>
         <div style="clear:both"></div>
-        <div style="padding:15px;">
+        <div class="voyager-ga-embed">
             <?php $google_analytics_client_id = Voyager::setting("google_analytics_client_id"); ?>
             @if (isset($google_analytics_client_id) && !empty($google_analytics_client_id))
                 {{-- Google Analytics Embed --}}

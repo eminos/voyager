@@ -5,27 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?= csrf_token() ?>"/>
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Lato:300,400,700,900' rel='stylesheet'
-          type='text/css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic|Roboto+Condensed:300,400|Lato:300,400,700,900' >
 
     <!-- CSS Libs -->
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/animate.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/bootstrap.min.css"> --}}
+    {{-- Should be moved to npm packages and gulp build process --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/animate.min.css"> --}}
     <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/bootstrap-switch.min.css">
     <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/checkbox3.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/toastr.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/bootstrap-toggle.min.css"
-          rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/js/icheck/icheck.css"
-          rel="stylesheet">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/jquery.dataTables.min.css"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/dataTables.bootstrap.css"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/select2.min.css"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/toastr.min.css"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/lib/js/icheck/icheck.css">
     <!-- CSS App -->
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/themes/flat-blue.css">
-
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,300italic">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/style.css"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/themes/flat-blue.css"> --}}
 
     <!-- Voyager CSS -->
     <link rel="stylesheet" href="{{ config('voyager.assets_path') }}/css/voyager.css">
@@ -34,11 +30,17 @@
     <link rel="shortcut icon" href="{{ config('voyager.assets_path') }}/images/logo-icon.png" type="image/x-icon">
 
     <!-- CSS Fonts -->
-    <link href="{{ config('voyager.assets_path') }}/fonts/voyager/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/jquery.min.js"></script>
+    {{-- <link href="{{ config('voyager.assets_path') }}/fonts/voyager/styles.css" rel="stylesheet"> --}}
+
+    {{-- <script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/jquery.min.js"></script> --}}
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/vue.min.js"></script>
+
+    {{-- <script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/vue.min.js"></script> --}}
+    <script>
+      window.Voyager = <?php echo json_encode([
+          'csrfToken' => csrf_token(),
+      ]); ?>
+    </script>
 
     @yield('css')
     @yield('head')
@@ -175,23 +177,13 @@ $menuExpanded = isset($_COOKIE['expandedMenu']) && $_COOKIE['expandedMenu'] == 1
             Group</a> - {{ Voyager::getVersion() }}
     </div>
 </footer>
-<!-- Javascript Libs -->
 
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/bootstrap-switch.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/jquery.matchHeight-min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/select2.full.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/bootstrap-toggle.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/jquery.cookie.js"></script>
 <!-- Javascript -->
+<script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/voyager.js"></script>
 
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/readmore.min.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/app.js"></script>
-<script type="text/javascript" src="{{ config('voyager.assets_path') }}/lib/js/toastr.min.js"></script>
-<script>
-            @if(Session::has('message'))
+
+@if(Session::has('message'))
+    <script>
     var type = "{{ Session::get('alert-type', 'info') }}";
     switch (type) {
         case 'info':
@@ -210,8 +202,8 @@ $menuExpanded = isset($_COOKIE['expandedMenu']) && $_COOKIE['expandedMenu'] == 1
             toastr.error("{{ Session::get('message') }}");
             break;
     }
-    @endif
-</script>
+    </script>
+@endif
 @yield('javascript')
 </body>
 </html>

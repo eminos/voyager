@@ -1,0 +1,24 @@
+
+// Fonts
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+// @import "variables";
+
+$icon-font-path: '../fonts/';
+
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/animate.css/animate";
+@import "node_modules/datatables.net-bs/css/dataTables.bootstrap";
+@import "voyager-datatables";
+@import "node_modules/select2/src/scss/core";
+@import "node_modules/dropzone/src/dropzone";
+@import "node_modules/toastr/toastr";
+
+// Import original Voyager css (should be refactored)
+@import "style";
+@import "themes/flat-blue";
+@import "voyager-original";
+@import "voyager-ga-embed";
+@import "media/media";
+@import "../fonts/voyager/styles";

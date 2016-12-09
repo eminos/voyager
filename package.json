@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "devDependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap-sass": "^3.3.7",
+    "datatables.net": "^1.10.13",
+    "datatables.net-bs": "^1.10.13",
+    "dropzone": "^4.3.0",
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
+    "jquery-ui": "^1.12.1",
+    "laravel-elixir": "^6.0.0-14",
+    "laravel-elixir-vue-2": "^0.2.0",
+    "laravel-elixir-webpack-official": "^1.0.2",
+    "lodash": "^4.16.2",
+    "select2": "^4.0.3",
+    "tinymce": "^4.5.1",
+    "toastr": "^2.1.2",
+    "vue": "^2.0.1",
+    "vue-resource": "^1.0.3"
+  }
+}

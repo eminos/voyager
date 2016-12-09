@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <title>Admin Login</title>
     {{-- Voyager CSS --}}
-    <link rel="stylesheet" href="{{ config('voyager.assets_path') }}/css/voyager.css">
+    <link rel="stylesheet" href="{{ config('voyager.assets_path') }}/css/voyager-original-login.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,300italic">
     <link href="https://file.myfontastic.com/QLbQY2QVvDNQgGeBRf7fWh/icons.css" rel="stylesheet">
 
