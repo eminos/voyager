@@ -339,6 +339,7 @@
                 <div class="modal-footer">
                     <form action="{{ route('voyager.settings.delete', ['id' => '__id']) }}" id="delete_form" method="POST">
                         {{ method_field("DELETE") }}
+                        {{ csrf_field() }}
                         <input type="submit" class="btn btn-danger pull-right delete-confirm" value="Yes, Delete This Setting">
                     </form>
                     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
@@ -359,7 +360,4 @@
         <input name="image" id="upload_file" type="file" onchange="$('#my_form').submit();this.value='';">
         <input type="hidden" name="type_slug" id="type_slug" value="settings">
     </form>
-
-    {{-- <script src="{{ config('voyager.assets_path') }}/lib/js/tinymce/tinymce.min.js"></script> --}}
-    {{-- <script src="{{ config('voyager.assets_path') }}/js/voyager_tinymce.js"></script> --}}
 @stop

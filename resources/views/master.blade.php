@@ -23,9 +23,6 @@
     {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/style.css"> --}}
     {{-- <link rel="stylesheet" type="text/css" href="{{ config('voyager.assets_path') }}/css/themes/flat-blue.css"> --}}
 
-    <!-- Voyager CSS -->
-    <link rel="stylesheet" href="{{ config('voyager.assets_path') }}/css/voyager.css">
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ config('voyager.assets_path') }}/images/logo-icon.png" type="image/x-icon">
 
@@ -43,6 +40,10 @@
     </script>
 
     @yield('css')
+
+    <!-- Voyager CSS -->
+    <link rel="stylesheet" href="{{ config('voyager.assets_path') }}/css/voyager.css">
+
     @yield('head')
 
 </head>
